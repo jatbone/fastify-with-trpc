@@ -1,0 +1,25 @@
+{
+  "name": "server-with-trpc",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.server.json",
+    "start": "nodemon ./dist-server/index.js 8080",
+    "dev": "run-p dev:build-server dev:run-server",
+    "dev:build-server": "tsc -p tsconfig.server.json -w",
+    "dev:run-server": "nodemon ./dist-server/index.js 8080 --watch"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.2.0",
+    "@trpc/server": "^10.16.0",
+    "fastify": "^4.14.1",
+    "zod": "^3.20.6"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.3",
+    "nodemon": "^2.0.21",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.9.5"
+  }
+}
